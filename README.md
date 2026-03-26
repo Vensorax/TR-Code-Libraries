@@ -1,8 +1,8 @@
 # TR-Code-Libraries
 
-High quality code libraries and utilities for software development of any kind from apps, games, and more. Currently only in C# but can add more languages (e.g. C++) under request. This code aims for the highest level of efficiency in both CPU cycles and RAM, by stripping any potential overhead to be "close to the metal" as possible while still being user friendly in terms of the API. These libraries are still being perfected and more additions will be made in terms of files and expanding on each file, but there is a chance that some stuff isn't as close to the metal or user friendly as advertised. In cases like this, reaaching out would be helpful to make sure the community overall has high power code to use.
+High quality code libraries and utilities for software development of any kind from apps, games, and more. Currently only in C# but can add more languages (e.g. C++) under request. This code aims for the highest level of efficiency in both CPU cycles and RAM, by stripping any potential overhead to be "close to the metal" as possible while still being user friendly in terms of the API. These libraries are still being perfected and more additions will be made in terms of files and expanding on each file, but there is a chance that some stuff isn't as close to the metal or user friendly as advertised. In cases like this, reaaching out would be helpful to make sure the community overall has high power code to use. All code here was written and architected by us and using tools like Copilot to also help optimize further, and was tested many times.
 
-Some of the libraries included:
+Some of the libraries included (now or within the future):
 
 - MathTools: A math library that handles various calculation and statistics utilities, including mean, median, mode, variable casting, factorials, standard deviation and more.
 
@@ -17,3 +17,6 @@ Some of the libraries included:
 - Group: A special type of collection that is a wrapper around a List and handles every practical use of collections in a single class. Swapping elements within itself and with other groups, group limits, shuffling items and so on. This is meant to be the "ultimate" collection for cases where you need a lot of control over the elements but don't want to build the tedious methods yourself.
 
 - BitPacker: A class used to quickly pack multiple integers of different bit types into a single number. Up to 128 bit numbers supported.
+
+
+This is also some of the code being used in a personal project: "Adventure Boy: The Centennial Tale" releasing on Steam soon. If you'd like to support the project or check out any of the development, you can check out it's instagram @adventure.boy.official.
