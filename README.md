@@ -1,22 +1,44 @@
 # TR-Code-Libraries
 
-High quality code libraries and utilities for software development of any kind from apps, games, and more. Currently only in C# but can add more languages (e.g. C++) under request. This code aims for the highest level of efficiency in both CPU cycles and RAM, by stripping any potential overhead to be "close to the metal" as possible while still being user friendly in terms of the API. These libraries are still being perfected and more additions will be made in terms of files and expanding on each file, but there is a chance that some stuff isn't as close to the metal or user friendly as advertised. In cases like this, reaaching out would be helpful to make sure the community overall has high power code to use. All code here was written and architected by us and using tools like Copilot to also help optimize further, and was tested many times.
+> **High-performance, zero-allocation C# utilities designed for games, apps, and demanding software.**
 
-Some of the libraries included (now or within the future):
+TR-Code-Libraries is a collection of utilities built to achieve the highest level of efficiency in both CPU cycles and RAM. By stripping away potential overhead, we aim to get as "close to the metal" as possible while maintaining a clean, user-friendly API. 
 
-- MathTools: A math library that handles various calculation and statistics utilities, including mean, median, mode, variable casting, factorials, standard deviation and more.
+Currently, the library is focused on **C#**, but is open to expanding into other systems languages (like C++ or Rust) based on community request!
 
-- PackedBuffer: A class that keeps collections compact by holding a maximum capacity for a collection, making all null/default values at the end of the collection and using a ReadOnlySpan to retrieve the actual contents of the filled up collection to prevent resizing arrays.
+### 🎯 Our Philosophy
+All code here was architected, written, and rigorously tested by Team Radiance (with the help of modern optimization tools) to ensure blazing-fast execution. We are constantly iterating to achieve maximum performance. If you spot an area where we can squeeze out even more efficiency, reaching out or submitting a PR is highly encouraged!
 
-  (e.g. A shoe cubby has a capacity of 32, and there are 15 shoes but there is no shoes in cubby 2, 6, or 10. The PackedBuffer will make sure there is no gaps in between the shoes.)
+---
 
-  Supports read-only, preserve order and unique element flag types as well to ensure every use case is accounted for. It is a wrapper around an array, not a List to make sure the capacity of the array is actually what you need.
-  
-- HashedString: A special type of string that's used for strings that appear often by converting it to a special 64-bit integer and keeping it's ID saved in a registry. Equivalent to Unreal Engine FName or Godot StringName, it provides little to no allocations compared to creating multiple strings, and makes comparing two strings a single integer comparison instead of comparing individual characters, saving potentially hundreds of CPU cycles in high traffic string allocated/compared environments.
+## 🛠️ Included Libraries
 
-- Group: A special type of collection that is a wrapper around a List and handles every practical use of collections in a single class. Swapping elements within itself and with other groups, group limits, shuffling items and so on. This is meant to be the "ultimate" collection for cases where you need a lot of control over the elements but don't want to build the tedious methods yourself.
+* **`MathTools`** A high-speed math library handling various calculations and statistical utilities. Includes SIMD-accelerated methods for mean, median, mode, variable casting, factorials, standard deviation, and more.
 
-- BitPacker: A class used to quickly pack multiple integers of different bit types into a single number. Up to 128 bit numbers supported.
+* **`PackedBuffer<T>`** A zero-allocation wrapper around an array (not a List) that keeps collections perfectly compact. It maintains a maximum capacity and ensures all null/default values are pushed to the end. It uses `ReadOnlySpan` to retrieve the active contents, preventing GC allocations and array resizing.
+  > Imagine a shoe cubby with a capacity of 32. You have 15 shoes, but cubbies 2, 6, and 10 are empty. `PackedBuffer` instantly shifts the data so there are no gaps between the shoes.
+  *Supports Read-Only, Preserve Order, and Unique Element flags.*
 
+* **`Group<T>`** A specialized collection wrapper that handles complex list operations in a single class. Features include swapping elements (internally and with other groups), enforcing group limits, and high-speed Fisher-Yates shuffling. The "ultimate" collection for when you need granular control without writing tedious boilerplate.
 
-This is also some of the code being used in a personal project: "Adventure Boy: The Centennial Tale" releasing on Steam soon. If you'd like to support the project or check out any of the development, you can check out it's instagram @adventure.boy.official.
+* **`TRandom`** A dual-stream entropy engine. It separates RNG into a deterministic "Logic Stream" and a chaotic "Visual Stream". Features bias-specific mechanics too like Double Advantage/Disadvantage rolls.
+
+* **`Collections Extensions`** High-performance extension methods for standard C# collections, including zero-allocation array compaction, seamless cross-list element swapping, and fast weighted-index selection.
+
+* **`HashedString`** The ultimate Flyweight string. Equivalent to Unreal Engine's `FName` or Godot's `StringName`. It converts frequently used strings into a special 64-bit integer and keeps the ID saved in a global registry. This provides near-zero allocations and turns string comparisons into a single integer check, saving hundreds of CPU cycles in high-traffic environments.
+
+* **`BitPacker`** A raw, bit-level utility used to quickly pack multiple integers of varying bit depths into a single number. Supports up to modern 128-bit integers (`Int128`).
+
+---
+
+## 🎮 Used In: Adventure Boy: The Centennial Tale
+The architecture in this repository powers our upcoming personal project: **Adventure Boy: The Centennial Tale**, releasing soon on Steam. While the code there is more of a custom-tailored one using MemoryPack binary serialization and JSON parsing, the libraries used here can easily support those functions as well!
+
+If you'd like to support the project or follow along with our development journey, check us out on Instagram: [@adventure.boy.official](https://instagram.com/adventure.boy.official).
+
+---
+
+## 🤝 Contributing & Feedback
+We are dedicated to providing the community with high-power code. We welcome issues, feature requests, and pull requests! If you want to send out a donation or a nice message of support, use the contact info.
+
+**Contact:** [samuelnchinda475@gmail.com](mailto:samuelnchinda475@gmail.com) | GitHub: [@Vensorax](https://github.com/Vensorax)
